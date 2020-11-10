@@ -94,10 +94,10 @@ for (i, v) in journal.enumerated() {
 // Положите их всех в массив (журнал).
 
 class NewStudent {
-    let name: String
-    let surname: String
-    let year: Int
-    let averageMark: Double
+    var name: String
+    var surname: String
+    var year: Int
+    var averageMark: Double
     
     init(name: String, surname: String, year: Int, averageMark: Double) {
         self.name = name
@@ -163,6 +163,13 @@ print("-------------")
 // Изменится ли первый массив?
 
 var newClassJournal: [NewStudent] = classJournal
+// Если изсенять значения таким способом, по одному через свойства, то первый журнал тоже изменится, а если через новую инициализацию значения то ничего не изменится
+newClassJournal[0].name = "Alex"
+newClassJournal[1].name = "Bred"
+newClassJournal[2].name = "Hope"
+newClassJournal[3].name = "Trevis"
+newClassJournal[4].name = "Helga"
+
 newClassJournal[0] = NewStudent(name: "Mike", surname: "Vasovski", year: 1990, averageMark: 7.0)
 newClassJournal[1] = NewStudent(name: "Nik", surname: "Gogy", year: 1990, averageMark: 7.3)
 newClassJournal[2] = NewStudent(name: "Sam", surname: "Tomas", year: 1990, averageMark: 5)
